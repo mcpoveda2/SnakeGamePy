@@ -9,14 +9,21 @@ screen.bgcolor("black")
 screen.title("Snake Game by Michael Poveda")
 screen.tracer(0)
 
+
 snake = Snake()
+screen.listen()
+
+screen.onkey(fun = snake.up, key="Up")
+screen.onkey(fun = snake.down, key="Down")
+screen.onkey(fun = snake.left, key="Left")
+screen.onkey(fun = snake.right, key="Right")
+
 
 #Inicio del juego
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(1)
-
+    time.sleep(0.1)
     snake.move()
 
 screen.exitonclick()
